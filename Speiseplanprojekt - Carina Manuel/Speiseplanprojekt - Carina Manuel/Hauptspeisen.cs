@@ -6,22 +6,39 @@ using System.Threading.Tasks;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
-    public class Vorspeisen : Speisen
+    class Hauptspeisen : Speisen
     {
-        private bool veg;
+        private bool kinder;
         private string zusatz;
+        private string fleisch;
+        private bool veg;
 
         private static int anzahl;
 
-        public Vorspeisen(string SID, string speisenart, string name, string wk):base(SID,speisenart,name,wk)
+        public Hauptspeisen(string SID, string speisenart, string name, string wk) : base(SID, speisenart, name, wk)
         {
             anzahl++;
         }
-        public Vorspeisen(string SID, string speisenart, string name, string wk, string zusatz, bool veg) :base (SID,speisenart,name,wk)
+        public Hauptspeisen(string SID, string speisenart, string name, string wk, string zusatz, bool veg, bool kinder, string fleisch) : base(SID, speisenart, name, wk)
         {
-            this.veg = veg;
+            this.kinder = kinder;
             this.zusatz = zusatz;
+            this.veg = veg;
+            this.fleisch = fleisch;
+
             anzahl++;
+        }
+
+        public bool Kinder
+        {
+            get { return kinder; }
+            set { kinder = value; }
+        }
+
+        public string Fleisch
+        {
+            get { return fleisch; }
+            set { fleisch = value; }
         }
 
         public bool Veg
@@ -29,15 +46,18 @@ namespace Speiseplanprojekt___Carina_Manuel
             get { return veg; }
             set { veg = value; }
         }
+
         public string Zusatz
         {
             get { return zusatz; }
             set { zusatz = value; }
         }
+
         public override string ToString()
         {
-            return base.ToString() + "\t" + veg + "\t" + zusatz;
+            return base.ToString() + "\t" + kinder + ": \t" + note;
         }
+
         public static int Anzahl
         {
             get { return anzahl; }
@@ -46,5 +66,6 @@ namespace Speiseplanprojekt___Carina_Manuel
         {
             anzahl--;
         }
+
     }
 }

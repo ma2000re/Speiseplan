@@ -41,6 +41,7 @@
             // 
             // listViewSpeisen
             // 
+            this.listViewSpeisen.AllowColumnReorder = true;
             this.listViewSpeisen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -50,10 +51,10 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listViewSpeisen.Location = new System.Drawing.Point(25, 92);
-            this.listViewSpeisen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewSpeisen.FullRowSelect = true;
+            this.listViewSpeisen.Location = new System.Drawing.Point(19, 75);
             this.listViewSpeisen.Name = "listViewSpeisen";
-            this.listViewSpeisen.Size = new System.Drawing.Size(1011, 433);
+            this.listViewSpeisen.Size = new System.Drawing.Size(790, 543);
             this.listViewSpeisen.TabIndex = 0;
             this.listViewSpeisen.UseCompatibleStateImageBehavior = false;
             this.listViewSpeisen.View = System.Windows.Forms.View.Details;
@@ -61,12 +62,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "SID";
-            this.columnHeader1.Width = 44;
+            this.columnHeader1.Width = 34;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Speisenart";
-            this.columnHeader2.Width = 253;
+            this.columnHeader2.Width = 118;
             // 
             // columnHeader3
             // 
@@ -76,7 +77,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Fleischart";
-            this.columnHeader4.Width = 120;
+            this.columnHeader4.Width = 82;
             // 
             // columnHeader5
             // 
@@ -86,12 +87,12 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Vegetarisch";
-            this.columnHeader6.Width = 90;
+            this.columnHeader6.Width = 68;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "WarmKalt";
-            this.columnHeader7.Width = 82;
+            this.columnHeader7.Width = 59;
             // 
             // columnHeader8
             // 
@@ -100,11 +101,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1338, 642);
             this.Controls.Add(this.listViewSpeisen);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

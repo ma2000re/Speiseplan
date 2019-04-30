@@ -6,29 +6,23 @@ using System.Threading.Tasks;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
-    public class Vorspeisen : Speisen
+    class Nachspeisen : Speisen
     {
-        private bool veg;
         private string zusatz;
 
         private static int anzahl;
 
-        public Vorspeisen(string SID, string speisenart, string name, string wk):base(SID,speisenart,name,wk)
+        public Nachspeisen(string SID, string speisenart, string name, string wk) : base(SID, speisenart, name, wk)
         {
             anzahl++;
         }
-        public Vorspeisen(string SID, string speisenart, string name, string wk, string zusatz, bool veg) :base (SID,speisenart,name,wk)
+
+        public Nachspeisen(string SID, string speisenart, string name, string wk, string zusatz) : base(SID, speisenart, name, wk)
         {
-            this.veg = veg;
             this.zusatz = zusatz;
             anzahl++;
         }
 
-        public bool Veg
-        {
-            get { return veg; }
-            set { veg = value; }
-        }
         public string Zusatz
         {
             get { return zusatz; }
@@ -36,7 +30,7 @@ namespace Speiseplanprojekt___Carina_Manuel
         }
         public override string ToString()
         {
-            return base.ToString() + "\t" + veg + "\t" + zusatz;
+            return base.ToString() + "\t" + zusatz;
         }
         public static int Anzahl
         {
@@ -46,5 +40,6 @@ namespace Speiseplanprojekt___Carina_Manuel
         {
             anzahl--;
         }
+
     }
 }
