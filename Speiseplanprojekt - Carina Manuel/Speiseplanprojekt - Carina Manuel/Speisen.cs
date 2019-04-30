@@ -53,6 +53,9 @@ namespace Speiseplanprojekt___Carina_Manuel
             set { wk = value; }
         }
 
-
+        public override string ToString()
+        {
+            return sID + " " +  name + "\t\t" + zusatz + "\t" + veg + "\t\t" + wk;
+        }
     }
 }
