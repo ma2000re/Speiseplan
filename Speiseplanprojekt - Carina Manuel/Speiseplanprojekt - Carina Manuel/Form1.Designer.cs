@@ -46,11 +46,11 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
+            this.columnHeader7,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader4});
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.Location = new System.Drawing.Point(19, 75);
             this.listViewSpeisen.Name = "listViewSpeisen";

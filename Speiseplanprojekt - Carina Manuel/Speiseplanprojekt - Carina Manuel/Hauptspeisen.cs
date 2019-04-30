@@ -55,7 +55,7 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         public override string ToString()
         {
-            return base.ToString() + "\t" + kinder + ": \t" + note;
+            return base.ToString() + "\t" + zusatz + "\t" + veg+"\t"+kinder+"\t"+fleisch;
         }
 
         public static int Anzahl
