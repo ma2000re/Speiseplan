@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
-    public class Vorspeisen : Speisen
+    public class Vorspeisen
     {
 
     }
