@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listViewSpeisen = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.speiseAnlegenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speisenBearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speisenLöschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewSpeisen
@@ -51,6 +57,7 @@
             this.columnHeader6,
             this.columnHeader8,
             this.columnHeader4});
+            this.listViewSpeisen.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.Location = new System.Drawing.Point(19, 75);
             this.listViewSpeisen.Name = "listViewSpeisen";
@@ -74,10 +81,10 @@
             this.columnHeader3.Text = "Name";
             this.columnHeader3.Width = 120;
             // 
-            // columnHeader4
+            // columnHeader7
             // 
-            this.columnHeader4.Text = "Fleischart";
-            this.columnHeader4.Width = 82;
+            this.columnHeader7.Text = "WarmKalt";
+            this.columnHeader7.Width = 59;
             // 
             // columnHeader5
             // 
@@ -89,15 +96,42 @@
             this.columnHeader6.Text = "Vegetarisch";
             this.columnHeader6.Width = 68;
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "WarmKalt";
-            this.columnHeader7.Width = 59;
-            // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Kinderspeise";
             this.columnHeader8.Width = 114;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Fleischart";
+            this.columnHeader4.Width = 82;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.speiseAnlegenToolStripMenuItem,
+            this.speisenBearbeitenToolStripMenuItem,
+            this.speisenLöschenToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 70);
+            // 
+            // speiseAnlegenToolStripMenuItem
+            // 
+            this.speiseAnlegenToolStripMenuItem.Name = "speiseAnlegenToolStripMenuItem";
+            this.speiseAnlegenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speiseAnlegenToolStripMenuItem.Text = "Speise anlegen";
+            // 
+            // speisenBearbeitenToolStripMenuItem
+            // 
+            this.speisenBearbeitenToolStripMenuItem.Name = "speisenBearbeitenToolStripMenuItem";
+            this.speisenBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speisenBearbeitenToolStripMenuItem.Text = "Speisen bearbeiten";
+            // 
+            // speisenLöschenToolStripMenuItem
+            // 
+            this.speisenLöschenToolStripMenuItem.Name = "speisenLöschenToolStripMenuItem";
+            this.speisenLöschenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speisenLöschenToolStripMenuItem.Text = "Speisen löschen";
             // 
             // Form1
             // 
@@ -106,8 +140,9 @@
             this.ClientSize = new System.Drawing.Size(1338, 642);
             this.Controls.Add(this.listViewSpeisen);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Speiseplan";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -123,6 +158,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem speiseAnlegenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem speisenBearbeitenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem speisenLöschenToolStripMenuItem;
     }
 }
 
