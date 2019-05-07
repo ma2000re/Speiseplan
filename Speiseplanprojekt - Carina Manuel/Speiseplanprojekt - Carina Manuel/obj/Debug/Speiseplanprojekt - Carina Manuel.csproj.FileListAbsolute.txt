@@ -18,3 +18,4 @@ D:\SCHULE\AP_SWE\GitHub\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanp
 D:\SCHULE\AP_SWE\GitHub\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt - Carina Manuel.csproj.CoreCompileInputs.cache
 D:\SCHULE\AP_SWE\GitHub\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt - Carina Manuel.exe
 D:\SCHULE\AP_SWE\GitHub\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt - Carina Manuel.pdb
+C:\Users\Carina\Documents\Schule\4CK\SWPP\GitHub\Projekt\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt___Carina_Manuel.Form2.resources
