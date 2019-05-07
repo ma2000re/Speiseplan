@@ -41,33 +41,41 @@ namespace Speiseplanprojekt___Carina_Manuel
                 return;
             }
             
-            if (cbFleischart.Text.Equals(""))
-            {
-                MessageBox.Show("Bitte wählen Sie eine Fleischart aus!");
-                return;
-            }
-
             if (cbSpeisenart.Text.Equals(""))
             {
                 MessageBox.Show("Bitte wählen Sie eine Speisenart aus!");
                 return;
             }
 
-            
 
+            string speisenart = cbSpeisenart.Text;
+            string name = txtName.Text;
+            string warmKalt = cbwk.Text;
+            string zusatz = txtZusatz.Text;
+            bool veg = checkBoxVegetarisch.Checked;
+            bool kind = checkBoxKinderspeise.Checked;
+            string fleischart = cbFleischart.Text;
 
 
             if (this.Text.Equals("Speise anlegen"))
             {
-                sql = "Insert into Speisen (Speisenart, Name, WarmKalt, Zusatz, Vegetarisch, Kinderspeise, Fleischart) values ('"+ cbSpeisenart.Text + "','" + txtName.Text + "','" + cbwk.Text + "','" + txtZusatz.Text + "','" + checkBoxVegetarisch.Checked + "','" + checkBoxKinderspeise.Checked + "','" + cbFleischart.Text + "');";
+                sql = "Insert into Speisen (Speisenart, Name, WarmKalt, Zusatz, Vegetarisch, Kinderspeise, Fleischart) values ('"+ speisenart + "','" + name + "','" + warmKalt + "','" + zusatz + "'," + veg + "," + kind + ",'" + fleischart + "')";
                 MessageBox.Show(sql);
             }
             else
             {
-                sql = "Update Speisen set Speisenart='"+ cbSpeisenart.Text+  "', Name='" + txtName.Text + "', WarmKalt='" + cbwk.Text + "', Zusatz'" + txtZusatz.Text + "', Vegetarisch'" + checkBoxVegetarisch.Checked + "', Kinderspeise'" + checkBoxKinderspeise.Checked+ "', Fleischart'" + cbFleischart.Text + "' where SID=" + id + ";";
+                sql = "Update Speisen set Speisenart='"+speisenart+  "', Name='" + name + "', WarmKalt='" + warmKalt + "', Zusatz='" + zusatz + "', Vegetarisch=" + veg + ", Kinderspeise=" + kind+ ", Fleischart'" + fleischart+ "' where SID=" + id + ";";
             }
             db.Ausfuehren(sql);
             this.Close();
+        }
+
+        private void checkBoxVegetarisch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxVegetarisch.Checked == true)
+                cbFleischart.Enabled = false;
+            if (checkBoxVegetarisch.Checked == false)
+                cbFleischart.Enabled = true;
         }
     }
 }
