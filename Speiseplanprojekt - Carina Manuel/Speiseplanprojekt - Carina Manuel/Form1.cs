@@ -59,7 +59,7 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         }
 
-        private void speiseBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void speisebearbeiten()
         {
             if (listViewSpeisen.SelectedItems.Count == 0)
             {
@@ -70,19 +70,42 @@ namespace Speiseplanprojekt___Carina_Manuel
 
             Form2 fSpeise = new Form2();
             fSpeise.Text = "Speise bearbeiten";
-            
+
             fSpeise.id = Convert.ToInt64(lvItem.SubItems[0].Text);
             fSpeise.txtID.Text = lvItem.SubItems[0].Text;
             fSpeise.cbSpeisenart.Text = lvItem.SubItems[1].Text;
             fSpeise.txtName.Text = lvItem.SubItems[2].Text;
             fSpeise.cbwk.Text = lvItem.SubItems[3].Text;
             fSpeise.txtZusatz.Text = lvItem.SubItems[4].Text;
-            fSpeise.checkBoxVegetarisch.Checked = Convert.ToBoolean(lvItem.SubItems[5]);
-            fSpeise.checkBoxKinderspeise.Checked = Convert.ToBoolean(lvItem.SubItems[6]);
+            
             fSpeise.cbFleischart.Text = lvItem.SubItems[7].Text;
+
+            if (lvItem.SubItems[5].Text.Equals("True"))
+            {
+                fSpeise.checkBoxVegetarisch.Checked = true;
+            }
+            else
+            {
+                fSpeise.checkBoxVegetarisch.Checked = false;
+            }
+
+
+            if (lvItem.SubItems[6].Text.Equals("True"))
+            {
+                fSpeise.checkBoxKinderspeise.Checked = true;
+            }
+            else
+            {
+                fSpeise.checkBoxKinderspeise.Checked = false;
+            }
 
             fSpeise.ShowDialog();
             einlesenSpeisen();
+        }
+
+        private void speiseBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            speisebearbeiten();
         }
 
         private void speiseAnlegenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,10 +118,7 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         private void speisenBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 fSpeise = new Form2();
-            fSpeise.Text = "Speise bearbeiten";
-            fSpeise.ShowDialog();
-            einlesenSpeisen();
+            speisebearbeiten();
         }
 
         private void speiseLöschenToolStripMenuItem_Click(object sender, EventArgs e)

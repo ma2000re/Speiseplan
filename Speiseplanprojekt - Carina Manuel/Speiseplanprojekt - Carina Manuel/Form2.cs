@@ -60,11 +60,12 @@ namespace Speiseplanprojekt___Carina_Manuel
             if (this.Text.Equals("Speise anlegen"))
             {
                 sql = "Insert into Speisen (Speisenart, Name, WarmKalt, Zusatz, Vegetarisch, Kinderspeise, Fleischart) values ('"+ speisenart + "','" + name + "','" + warmKalt + "','" + zusatz + "'," + veg + "," + kind + ",'" + fleischart + "')";
-                MessageBox.Show(sql);
+               // MessageBox.Show(sql);
             }
             else
             {
-                sql = "Update Speisen set Speisenart='"+speisenart+  "', Name='" + name + "', WarmKalt='" + warmKalt + "', Zusatz='" + zusatz + "', Vegetarisch=" + veg + ", Kinderspeise=" + kind+ ", Fleischart'" + fleischart+ "' where SID=" + id + ";";
+                sql = "Update Speisen set Speisenart='"+speisenart+  "', Name='" + name + "', WarmKalt='" + warmKalt + "', Zusatz='" + zusatz + "', Vegetarisch=" + veg + ", Kinderspeise=" + kind+ ", Fleischart='" + fleischart+ "' where SID=" + id + ";";
+                //MessageBox.Show(sql);
             }
             db.Ausfuehren(sql);
             this.Close();
