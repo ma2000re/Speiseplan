@@ -67,7 +67,7 @@
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.Location = new System.Drawing.Point(19, 75);
             this.listViewSpeisen.Name = "listViewSpeisen";
-            this.listViewSpeisen.Size = new System.Drawing.Size(922, 543);
+            this.listViewSpeisen.Size = new System.Drawing.Size(932, 543);
             this.listViewSpeisen.TabIndex = 0;
             this.listViewSpeisen.UseCompatibleStateImageBehavior = false;
             this.listViewSpeisen.View = System.Windows.Forms.View.Details;
@@ -80,12 +80,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Speisenart";
-            this.columnHeader2.Width = 149;
+            this.columnHeader2.Width = 97;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Name";
-            this.columnHeader3.Width = 120;
+            this.columnHeader3.Width = 230;
             // 
             // columnHeader7
             // 
