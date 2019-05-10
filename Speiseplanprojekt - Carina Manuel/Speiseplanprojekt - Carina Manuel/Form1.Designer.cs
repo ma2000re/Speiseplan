@@ -65,9 +65,10 @@
             this.listViewSpeisen.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewSpeisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewSpeisen.FullRowSelect = true;
-            this.listViewSpeisen.Location = new System.Drawing.Point(19, 75);
+            this.listViewSpeisen.Location = new System.Drawing.Point(25, 92);
+            this.listViewSpeisen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewSpeisen.Name = "listViewSpeisen";
-            this.listViewSpeisen.Size = new System.Drawing.Size(932, 543);
+            this.listViewSpeisen.Size = new System.Drawing.Size(1241, 667);
             this.listViewSpeisen.TabIndex = 0;
             this.listViewSpeisen.UseCompatibleStateImageBehavior = false;
             this.listViewSpeisen.View = System.Windows.Forms.View.Details;
@@ -80,7 +81,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Speisenart";
-            this.columnHeader2.Width = 97;
+            this.columnHeader2.Width = 145;
             // 
             // columnHeader3
             // 
@@ -120,26 +121,26 @@
             this.speisenBearbeitenToolStripMenuItem,
             this.speisenLöschenToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 76);
             // 
             // speiseAnlegenToolStripMenuItem
             // 
             this.speiseAnlegenToolStripMenuItem.Name = "speiseAnlegenToolStripMenuItem";
-            this.speiseAnlegenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.speiseAnlegenToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.speiseAnlegenToolStripMenuItem.Text = "Speise anlegen";
             this.speiseAnlegenToolStripMenuItem.Click += new System.EventHandler(this.speiseAnlegenToolStripMenuItem_Click);
             // 
             // speisenBearbeitenToolStripMenuItem
             // 
             this.speisenBearbeitenToolStripMenuItem.Name = "speisenBearbeitenToolStripMenuItem";
-            this.speisenBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.speisenBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.speisenBearbeitenToolStripMenuItem.Text = "Speisen bearbeiten";
             this.speisenBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.speisenBearbeitenToolStripMenuItem_Click);
             // 
             // speisenLöschenToolStripMenuItem
             // 
             this.speisenLöschenToolStripMenuItem.Name = "speisenLöschenToolStripMenuItem";
-            this.speisenLöschenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.speisenLöschenToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.speisenLöschenToolStripMenuItem.Text = "Speisen löschen";
             this.speisenLöschenToolStripMenuItem.Click += new System.EventHandler(this.speisenLöschenToolStripMenuItem_Click);
             // 
@@ -152,40 +153,41 @@
             this.speiseLöschenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1338, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1784, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // speiseAnlegenToolStripMenuItem1
             // 
             this.speiseAnlegenToolStripMenuItem1.Name = "speiseAnlegenToolStripMenuItem1";
-            this.speiseAnlegenToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
+            this.speiseAnlegenToolStripMenuItem1.Size = new System.Drawing.Size(121, 24);
             this.speiseAnlegenToolStripMenuItem1.Text = "Speise anlegen";
             this.speiseAnlegenToolStripMenuItem1.Click += new System.EventHandler(this.speiseAnlegenToolStripMenuItem1_Click);
             // 
             // speiseBearbeitenToolStripMenuItem
             // 
             this.speiseBearbeitenToolStripMenuItem.Name = "speiseBearbeitenToolStripMenuItem";
-            this.speiseBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.speiseBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.speiseBearbeitenToolStripMenuItem.Text = "Speise bearbeiten";
             this.speiseBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.speiseBearbeitenToolStripMenuItem_Click);
             // 
             // speiseLöschenToolStripMenuItem
             // 
             this.speiseLöschenToolStripMenuItem.Name = "speiseLöschenToolStripMenuItem";
-            this.speiseLöschenToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.speiseLöschenToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.speiseLöschenToolStripMenuItem.Text = "Speise löschen";
             this.speiseLöschenToolStripMenuItem.Click += new System.EventHandler(this.speiseLöschenToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 642);
+            this.ClientSize = new System.Drawing.Size(1784, 790);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.listViewSpeisen);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Speiseplan";
             this.Load += new System.EventHandler(this.Form1_Load);
