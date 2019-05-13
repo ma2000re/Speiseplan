@@ -185,5 +185,9 @@ namespace Speiseplanprojekt___Carina_Manuel
             sw.WriteLine(backColor.Color.G);
             sw.Close();
         }
+
+        private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -207,25 +207,26 @@
             this.öffnenToolStripMenuItem,
             this.neuLadenToolStripMenuItem});
             this.datenbankToolStripMenuItem.Name = "datenbankToolStripMenuItem";
-            this.datenbankToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.datenbankToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datenbankToolStripMenuItem.Text = "Datenbank";
             // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
+            this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // neuLadenToolStripMenuItem
             // 
             this.neuLadenToolStripMenuItem.Name = "neuLadenToolStripMenuItem";
-            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.neuLadenToolStripMenuItem.Text = "Neu laden";
             // 
             // hintergrundfarbeToolStripMenuItem
             // 
             this.hintergrundfarbeToolStripMenuItem.Name = "hintergrundfarbeToolStripMenuItem";
-            this.hintergrundfarbeToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.hintergrundfarbeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hintergrundfarbeToolStripMenuItem.Text = "Hintergrundfarbe";
             this.hintergrundfarbeToolStripMenuItem.Click += new System.EventHandler(this.hintergrundfarbeToolStripMenuItem_Click);
             // 
