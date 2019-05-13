@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
@@ -23,11 +24,15 @@ namespace Speiseplanprojekt___Carina_Manuel
         string sql;
         OleDbDataReader dr;
         int id;
+        StreamReader sr;
+        StreamWriter sw;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             db = new Datenbank();
             einlesenSpeisen();
+            hintergrundfarbeEinlesen();
         }
 
        private void einlesenSpeisen()
@@ -149,6 +154,36 @@ namespace Speiseplanprojekt___Carina_Manuel
                 db.Ausfuehren("DELETE FROM Speisen where SID=" + id + ";");
             }
             einlesenSpeisen();
+        }
+
+        private void hintergrundfarbeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hintergrundfarbeSchreiben();
+        }
+
+        private void hintergrundfarbeEinlesen()
+        {
+            sr = new StreamReader("BackColor.ini");
+            int a = Convert.ToInt16(sr.ReadLine().Trim());
+            int b = Convert.ToInt16(sr.ReadLine().Trim());
+            int r = Convert.ToInt16(sr.ReadLine().Trim());
+            int g = Convert.ToInt16(sr.ReadLine().Trim());
+            sr.Close();
+
+            this.BackColor = Color.FromArgb(a, r, g, b);
+        }
+
+        private void hintergrundfarbeSchreiben()
+        {
+            backColor.ShowDialog();
+            this.BackColor = backColor.Color;
+            groupBox1.BackColor = backColor.Color;
+            sw = new StreamWriter("BackColor.ini");
+            sw.WriteLine(backColor.Color.A);
+            sw.WriteLine(backColor.Color.B);
+            sw.WriteLine(backColor.Color.R);
+            sw.WriteLine(backColor.Color.G);
+            sw.Close();
         }
     }
 }
