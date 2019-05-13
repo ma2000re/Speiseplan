@@ -11,9 +11,9 @@ using System.Data.OleDb;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
-    public partial class Form1 : Form
+    public partial class Speiseplan : Form
     {
-        public Form1()
+        public Speiseplan()
         {
             InitializeComponent();
         }

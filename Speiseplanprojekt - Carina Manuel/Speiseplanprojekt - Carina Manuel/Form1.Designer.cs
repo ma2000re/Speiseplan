@@ -1,6 +1,6 @@
 ﻿namespace Speiseplanprojekt___Carina_Manuel
 {
-    partial class Form1
+    partial class Speiseplan
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -46,6 +46,7 @@
             this.speiseAnlegenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.speiseBearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.speiseLöschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,9 +68,10 @@
             this.listViewSpeisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.GridLines = true;
-            this.listViewSpeisen.Location = new System.Drawing.Point(19, 75);
+            this.listViewSpeisen.Location = new System.Drawing.Point(0, 28);
+            this.listViewSpeisen.MultiSelect = false;
             this.listViewSpeisen.Name = "listViewSpeisen";
-            this.listViewSpeisen.Size = new System.Drawing.Size(932, 543);
+            this.listViewSpeisen.Size = new System.Drawing.Size(941, 612);
             this.listViewSpeisen.TabIndex = 0;
             this.listViewSpeisen.UseCompatibleStateImageBehavior = false;
             this.listViewSpeisen.View = System.Windows.Forms.View.Details;
@@ -147,6 +149,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.speiseAnlegenToolStripMenuItem1,
@@ -155,40 +159,52 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1338, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1338, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // speiseAnlegenToolStripMenuItem1
             // 
             this.speiseAnlegenToolStripMenuItem1.Name = "speiseAnlegenToolStripMenuItem1";
-            this.speiseAnlegenToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
+            this.speiseAnlegenToolStripMenuItem1.Size = new System.Drawing.Size(108, 21);
             this.speiseAnlegenToolStripMenuItem1.Text = "Speise anlegen";
             this.speiseAnlegenToolStripMenuItem1.Click += new System.EventHandler(this.speiseAnlegenToolStripMenuItem1_Click);
             // 
             // speiseBearbeitenToolStripMenuItem
             // 
             this.speiseBearbeitenToolStripMenuItem.Name = "speiseBearbeitenToolStripMenuItem";
-            this.speiseBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.speiseBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(125, 21);
             this.speiseBearbeitenToolStripMenuItem.Text = "Speise bearbeiten";
             this.speiseBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.speiseBearbeitenToolStripMenuItem_Click);
             // 
             // speiseLöschenToolStripMenuItem
             // 
             this.speiseLöschenToolStripMenuItem.Name = "speiseLöschenToolStripMenuItem";
-            this.speiseLöschenToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.speiseLöschenToolStripMenuItem.Size = new System.Drawing.Size(106, 21);
             this.speiseLöschenToolStripMenuItem.Text = "Speise löschen";
             this.speiseLöschenToolStripMenuItem.Click += new System.EventHandler(this.speiseLöschenToolStripMenuItem_Click);
             // 
-            // Form1
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(947, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(391, 612);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Zufallsplan erstellen:";
+            // 
+            // Speiseplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1338, 642);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.listViewSpeisen);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Speiseplan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Speiseplan";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -218,6 +234,7 @@
         private System.Windows.Forms.ToolStripMenuItem speiseAnlegenToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem speiseBearbeitenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem speiseLöschenToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
