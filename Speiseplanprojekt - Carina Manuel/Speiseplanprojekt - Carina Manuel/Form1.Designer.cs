@@ -52,9 +52,9 @@
             this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neuLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hintergrundfarbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backColor = new System.Windows.Forms.ColorDialog();
-            this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picture = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1.SuspendLayout();
@@ -65,7 +65,6 @@
             // listViewSpeisen
             // 
             this.listViewSpeisen.AllowColumnReorder = true;
-            this.listViewSpeisen.CheckBoxes = true;
             this.listViewSpeisen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -80,7 +79,7 @@
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.GridLines = true;
             this.listViewSpeisen.Location = new System.Drawing.Point(16, 34);
-            this.listViewSpeisen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewSpeisen.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSpeisen.MultiSelect = false;
             this.listViewSpeisen.Name = "listViewSpeisen";
             this.listViewSpeisen.Size = new System.Drawing.Size(1249, 740);
@@ -219,14 +218,14 @@
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(165, 28);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // neuLadenToolStripMenuItem
             // 
             this.neuLadenToolStripMenuItem.Name = "neuLadenToolStripMenuItem";
-            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(165, 28);
             this.neuLadenToolStripMenuItem.Text = "Neu laden";
             // 
             // hintergrundfarbeToolStripMenuItem
@@ -236,24 +235,24 @@
             this.hintergrundfarbeToolStripMenuItem.Text = "Hintergrundfarbe";
             this.hintergrundfarbeToolStripMenuItem.Click += new System.EventHandler(this.hintergrundfarbeToolStripMenuItem_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1275, 215);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(509, 560);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Zufallsplan erstellen:";
-            // 
             // logoToolStripMenuItem
             // 
             this.logoToolStripMenuItem.Name = "logoToolStripMenuItem";
             this.logoToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
             this.logoToolStripMenuItem.Text = "Logo";
             this.logoToolStripMenuItem.Click += new System.EventHandler(this.logoToolStripMenuItem_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(1275, 215);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(509, 560);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Zufallsplan erstellen:";
             // 
             // picture
             // 
@@ -279,7 +278,7 @@
             this.Controls.Add(this.listViewSpeisen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Speiseplan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Speiseplan";

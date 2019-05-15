@@ -38,7 +38,7 @@ namespace Speiseplanprojekt___Carina_Manuel
        private void einlesenSpeisen()
         {
             listViewSpeisen.Items.Clear();
-            sql = "Select * from Speisen";
+            sql = "Select * from Speisen order by SID";
             dr = db.Einlesen(sql);
             while (dr.Read())
             {
