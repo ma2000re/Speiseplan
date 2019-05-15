@@ -189,5 +189,20 @@ namespace Speiseplanprojekt___Carina_Manuel
         private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
+
+        private void logoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+
+            dlg.Title = "Open Image";
+            dlg.Filter = "jpg files (*.jpg)|*.jpg";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+              picture.Image=new Bitmap (dlg.FileName);
+            }
+            
+            dlg.Dispose();
+        }
     }
 }

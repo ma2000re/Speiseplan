@@ -54,8 +54,12 @@
             this.hintergrundfarbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backColor = new System.Windows.Forms.ColorDialog();
+            this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picture = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewSpeisen
@@ -75,10 +79,11 @@
             this.listViewSpeisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.GridLines = true;
-            this.listViewSpeisen.Location = new System.Drawing.Point(12, 28);
+            this.listViewSpeisen.Location = new System.Drawing.Point(16, 34);
+            this.listViewSpeisen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewSpeisen.MultiSelect = false;
             this.listViewSpeisen.Name = "listViewSpeisen";
-            this.listViewSpeisen.Size = new System.Drawing.Size(938, 602);
+            this.listViewSpeisen.Size = new System.Drawing.Size(1249, 740);
             this.listViewSpeisen.TabIndex = 0;
             this.listViewSpeisen.UseCompatibleStateImageBehavior = false;
             this.listViewSpeisen.View = System.Windows.Forms.View.Details;
@@ -131,26 +136,26 @@
             this.speisenBearbeitenToolStripMenuItem,
             this.speisenLöschenToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 76);
             // 
             // speiseAnlegenToolStripMenuItem
             // 
             this.speiseAnlegenToolStripMenuItem.Name = "speiseAnlegenToolStripMenuItem";
-            this.speiseAnlegenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.speiseAnlegenToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.speiseAnlegenToolStripMenuItem.Text = "Speise anlegen";
             this.speiseAnlegenToolStripMenuItem.Click += new System.EventHandler(this.speiseAnlegenToolStripMenuItem_Click);
             // 
             // speisenBearbeitenToolStripMenuItem
             // 
             this.speisenBearbeitenToolStripMenuItem.Name = "speisenBearbeitenToolStripMenuItem";
-            this.speisenBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.speisenBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.speisenBearbeitenToolStripMenuItem.Text = "Speisen bearbeiten";
             this.speisenBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.speisenBearbeitenToolStripMenuItem_Click);
             // 
             // speisenLöschenToolStripMenuItem
             // 
             this.speisenLöschenToolStripMenuItem.Name = "speisenLöschenToolStripMenuItem";
-            this.speisenLöschenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.speisenLöschenToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.speisenLöschenToolStripMenuItem.Text = "Speisen löschen";
             this.speisenLöschenToolStripMenuItem.Click += new System.EventHandler(this.speisenLöschenToolStripMenuItem_Click);
             // 
@@ -166,29 +171,29 @@
             this.einstellungenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1338, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1784, 31);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // speiseAnlegenToolStripMenuItem1
             // 
             this.speiseAnlegenToolStripMenuItem1.Name = "speiseAnlegenToolStripMenuItem1";
-            this.speiseAnlegenToolStripMenuItem1.Size = new System.Drawing.Size(108, 21);
+            this.speiseAnlegenToolStripMenuItem1.Size = new System.Drawing.Size(136, 27);
             this.speiseAnlegenToolStripMenuItem1.Text = "Speise anlegen";
             this.speiseAnlegenToolStripMenuItem1.Click += new System.EventHandler(this.speiseAnlegenToolStripMenuItem1_Click);
             // 
             // speiseBearbeitenToolStripMenuItem
             // 
             this.speiseBearbeitenToolStripMenuItem.Name = "speiseBearbeitenToolStripMenuItem";
-            this.speiseBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(125, 21);
+            this.speiseBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(157, 27);
             this.speiseBearbeitenToolStripMenuItem.Text = "Speise bearbeiten";
             this.speiseBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.speiseBearbeitenToolStripMenuItem_Click);
             // 
             // speiseLöschenToolStripMenuItem
             // 
             this.speiseLöschenToolStripMenuItem.Name = "speiseLöschenToolStripMenuItem";
-            this.speiseLöschenToolStripMenuItem.Size = new System.Drawing.Size(106, 21);
+            this.speiseLöschenToolStripMenuItem.Size = new System.Drawing.Size(133, 27);
             this.speiseLöschenToolStripMenuItem.Text = "Speise löschen";
             this.speiseLöschenToolStripMenuItem.Click += new System.EventHandler(this.speiseLöschenToolStripMenuItem_Click);
             // 
@@ -196,9 +201,10 @@
             // 
             this.einstellungenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datenbankToolStripMenuItem,
-            this.hintergrundfarbeToolStripMenuItem});
+            this.hintergrundfarbeToolStripMenuItem,
+            this.logoToolStripMenuItem});
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(124, 27);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             // 
             // datenbankToolStripMenuItem
@@ -207,49 +213,73 @@
             this.öffnenToolStripMenuItem,
             this.neuLadenToolStripMenuItem});
             this.datenbankToolStripMenuItem.Name = "datenbankToolStripMenuItem";
-            this.datenbankToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datenbankToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
             this.datenbankToolStripMenuItem.Text = "Datenbank";
             // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // neuLadenToolStripMenuItem
             // 
             this.neuLadenToolStripMenuItem.Name = "neuLadenToolStripMenuItem";
-            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
             this.neuLadenToolStripMenuItem.Text = "Neu laden";
             // 
             // hintergrundfarbeToolStripMenuItem
             // 
             this.hintergrundfarbeToolStripMenuItem.Name = "hintergrundfarbeToolStripMenuItem";
-            this.hintergrundfarbeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hintergrundfarbeToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
             this.hintergrundfarbeToolStripMenuItem.Text = "Hintergrundfarbe";
             this.hintergrundfarbeToolStripMenuItem.Click += new System.EventHandler(this.hintergrundfarbeToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(956, 28);
+            this.groupBox1.Location = new System.Drawing.Point(1275, 215);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 602);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(509, 560);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Zufallsplan erstellen:";
             // 
+            // logoToolStripMenuItem
+            // 
+            this.logoToolStripMenuItem.Name = "logoToolStripMenuItem";
+            this.logoToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
+            this.logoToolStripMenuItem.Text = "Logo";
+            this.logoToolStripMenuItem.Click += new System.EventHandler(this.logoToolStripMenuItem_Click);
+            // 
+            // picture
+            // 
+            this.picture.Location = new System.Drawing.Point(1514, 40);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(258, 178);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture.TabIndex = 3;
+            this.picture.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Speiseplan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 642);
+            this.ClientSize = new System.Drawing.Size(1784, 790);
+            this.Controls.Add(this.picture);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.listViewSpeisen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Speiseplan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Speiseplan";
@@ -257,6 +287,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,6 +319,9 @@
         private System.Windows.Forms.ToolStripMenuItem neuLadenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hintergrundfarbeToolStripMenuItem;
         private System.Windows.Forms.ColorDialog backColor;
+        private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picture;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
