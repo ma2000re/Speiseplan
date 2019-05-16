@@ -33,9 +33,10 @@ namespace Speiseplanprojekt___Carina_Manuel
             db = new Datenbank();
             einlesenSpeisen();
             hintergrundfarbeEinlesen();
+            bildeinlesen();
         }
 
-       private void einlesenSpeisen()
+        private void einlesenSpeisen()
         {
             listViewSpeisen.Items.Clear();
             sql = "Select * from Speisen order by SID";
@@ -50,10 +51,23 @@ namespace Speiseplanprojekt___Carina_Manuel
                 lvItem.SubItems.Add(dr[5].ToString());
                 lvItem.SubItems.Add(dr[6].ToString());
                 lvItem.SubItems.Add(dr[7].ToString());
-                
+
+
                 listViewSpeisen.Items.Add(lvItem);
+
+                //MessageBox.Show(lvItem.SubItems[5].Text);
+                if (this.lvItem.SubItems[5].Text.Equals("True"))
+                {
+                    //MessageBox.Show(lvItem.SubItems[1].Text);
+                    this.lvItem.BackColor = Color.Green;
+                    this.lvItem.ForeColor = Color.White;
+                }
             }
+
+            
         }
+
+        
 
         private void speiseAnlegenToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -82,7 +96,7 @@ namespace Speiseplanprojekt___Carina_Manuel
             fSpeise.txtName.Text = lvItem.SubItems[2].Text;
             fSpeise.cbwk.Text = lvItem.SubItems[3].Text;
             fSpeise.txtZusatz.Text = lvItem.SubItems[4].Text;
-            
+
             fSpeise.cbFleischart.Text = lvItem.SubItems[7].Text;
 
             if (lvItem.SubItems[5].Text.Equals("True"))
@@ -173,6 +187,12 @@ namespace Speiseplanprojekt___Carina_Manuel
             this.BackColor = Color.FromArgb(a, r, g, b);
         }
 
+        private void bildeinlesen()
+        {
+            //sr=new StreamReader("pfadbild.txt");
+            //picture.Image = sr.ReadLine();
+        }
+
         private void hintergrundfarbeSchreiben()
         {
             backColor.ShowDialog();
@@ -203,6 +223,11 @@ namespace Speiseplanprojekt___Carina_Manuel
             }
             
             dlg.Dispose();
+
+            sw = new StreamWriter("pfadbild.txt");
+            sw.WriteLine(dlg.FileName);
+            sw.Close();
+
         }
     }
 }
