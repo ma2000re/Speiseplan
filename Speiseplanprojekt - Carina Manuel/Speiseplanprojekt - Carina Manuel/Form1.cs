@@ -142,7 +142,11 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         private void speiseLöschenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 fSpeise = new Form2();
+            if (listViewSpeisen.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Wählen Sie bitte eine Speise aus!");
+                return;
+            }
 
             lvItem = listViewSpeisen.SelectedItems[0];
             id = Convert.ToInt32(lvItem.SubItems[0].Text);
@@ -157,7 +161,11 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         private void speisenLöschenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 fSpeise = new Form2();
+            if (listViewSpeisen.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Wählen Sie bitte eine Speise aus!");
+                return;
+            }
 
             lvItem = listViewSpeisen.SelectedItems[0];
             id = Convert.ToInt32(lvItem.SubItems[0].Text);
