@@ -34,6 +34,9 @@ namespace Speiseplanprojekt___Carina_Manuel
             einlesenSpeisen();
             hintergrundfarbeEinlesen();
             bildeinlesen();
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Width = Screen.PrimaryScreen.WorkingArea.Width;
+            this.Location = new Point(0, 0);
         }
 
         private void einlesenSpeisen()
@@ -197,8 +200,11 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         private void bildeinlesen()
         {
-            //sr=new StreamReader("pfadbild.txt");
-            //picture.Image = sr.ReadLine();
+            sr=new StreamReader("pfadbild.txt");
+            string pfad = sr.ReadLine();
+            picture.Image = new Bitmap(pfad);
+
+            sr.Close();
         }
 
         private void hintergrundfarbeSchreiben()

@@ -54,16 +54,17 @@
             this.hintergrundfarbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbNachspeise = new System.Windows.Forms.ComboBox();
+            this.cbHauptspeise = new System.Windows.Forms.ComboBox();
+            this.cbVorspeise = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.backColor = new System.Windows.Forms.ColorDialog();
             this.picture = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbVorspeise = new System.Windows.Forms.ComboBox();
-            this.cbHauptspeise = new System.Windows.Forms.ComboBox();
-            this.cbNachspeise = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,7 +87,7 @@
             this.listViewSpeisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewSpeisen.FullRowSelect = true;
             this.listViewSpeisen.GridLines = true;
-            this.listViewSpeisen.Location = new System.Drawing.Point(16, 34);
+            this.listViewSpeisen.Location = new System.Drawing.Point(13, 201);
             this.listViewSpeisen.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSpeisen.MultiSelect = false;
             this.listViewSpeisen.Name = "listViewSpeisen";
@@ -179,7 +180,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1784, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1809, 31);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -259,7 +260,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1275, 215);
+            this.groupBox1.Location = new System.Drawing.Point(1296, 382);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -268,11 +269,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Zufallsplan erstellen:";
             // 
+            // cbNachspeise
+            // 
+            this.cbNachspeise.FormattingEnabled = true;
+            this.cbNachspeise.Location = new System.Drawing.Point(269, 322);
+            this.cbNachspeise.Name = "cbNachspeise";
+            this.cbNachspeise.Size = new System.Drawing.Size(172, 33);
+            this.cbNachspeise.TabIndex = 5;
+            // 
+            // cbHauptspeise
+            // 
+            this.cbHauptspeise.FormattingEnabled = true;
+            this.cbHauptspeise.Location = new System.Drawing.Point(269, 234);
+            this.cbHauptspeise.Name = "cbHauptspeise";
+            this.cbHauptspeise.Size = new System.Drawing.Size(172, 33);
+            this.cbHauptspeise.TabIndex = 4;
+            // 
+            // cbVorspeise
+            // 
+            this.cbVorspeise.FormattingEnabled = true;
+            this.cbVorspeise.Location = new System.Drawing.Point(269, 146);
+            this.cbVorspeise.Name = "cbVorspeise";
+            this.cbVorspeise.Size = new System.Drawing.Size(172, 33);
+            this.cbVorspeise.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(48, 325);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Nachspeise:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 237);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Hauptspeise:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Vorspeise:";
+            // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(1514, 40);
+            this.picture.Location = new System.Drawing.Point(1381, 49);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(258, 178);
+            this.picture.Size = new System.Drawing.Size(358, 250);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 3;
             this.picture.TabStop = false;
@@ -284,68 +336,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1272, 194);
+            this.label2.Location = new System.Drawing.Point(1293, 361);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(229, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "*grün gekennzeichnet=Vegetarisch";
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Vorspeise:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 237);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Hauptspeise:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Nachspeise:";
-            // 
-            // cbVorspeise
-            // 
-            this.cbVorspeise.FormattingEnabled = true;
-            this.cbVorspeise.Location = new System.Drawing.Point(269, 146);
-            this.cbVorspeise.Name = "cbVorspeise";
-            this.cbVorspeise.Size = new System.Drawing.Size(172, 33);
-            this.cbVorspeise.TabIndex = 3;
-            // 
-            // cbHauptspeise
-            // 
-            this.cbHauptspeise.FormattingEnabled = true;
-            this.cbHauptspeise.Location = new System.Drawing.Point(269, 234);
-            this.cbHauptspeise.Name = "cbHauptspeise";
-            this.cbHauptspeise.Size = new System.Drawing.Size(172, 33);
-            this.cbHauptspeise.TabIndex = 4;
-            // 
-            // cbNachspeise
-            // 
-            this.cbNachspeise.FormattingEnabled = true;
-            this.cbNachspeise.Location = new System.Drawing.Point(269, 322);
-            this.cbNachspeise.Name = "cbNachspeise";
-            this.cbNachspeise.Size = new System.Drawing.Size(172, 33);
-            this.cbNachspeise.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Coronet", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(617, 69);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(291, 107);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Speiseplan";
             // 
             // Speiseplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1784, 790);
+            this.ClientSize = new System.Drawing.Size(1809, 983);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.picture);
             this.Controls.Add(this.groupBox1);
@@ -405,6 +417,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }
 
