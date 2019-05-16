@@ -26,6 +26,9 @@ namespace Speiseplanprojekt___Carina_Manuel
         int id;
         StreamReader sr;
         StreamWriter sw;
+        Random rand;
+        int[] ids;
+
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,10 +37,82 @@ namespace Speiseplanprojekt___Carina_Manuel
             einlesenSpeisen();
             hintergrundfarbeEinlesen();
             bildeinlesen();
-            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
-            this.Width = Screen.PrimaryScreen.WorkingArea.Width;
-            this.Location = new Point(0, 0);
+            einlesenCbVorspeisen();
+            einlesenCbHauptspeisen();
+            einlesenCbNachspeisen();
+            speisenZiehen();
+            this.WindowState = FormWindowState.Maximized;
         }
+
+        private void speisenZiehen()
+        {
+            vorspeisenZiehen();
+            hauptspeisenZiehen();
+            nachspeisenZiehen();
+        }
+
+        private void einlesenCbVorspeisen()
+        {
+            cbVorMontag.Items.Clear();
+            cbVorDienstag.Items.Clear();
+            cbVorMittwoch.Items.Clear();
+            cbVorDonnerstag.Items.Clear();
+            cbVorFreitag.Items.Clear();
+
+            sql = "SELECT Name FROM Speisen WHERE Speisenart='Vorspeise'";
+            dr = db.Einlesen(sql);
+            while(dr.Read())
+            {
+                cbVorMontag.Items.Add(dr[0].ToString());
+                cbVorDienstag.Items.Add(dr[0].ToString());
+                cbVorMittwoch.Items.Add(dr[0].ToString());
+                cbVorDonnerstag.Items.Add(dr[0].ToString());
+                cbVorFreitag.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+        }
+
+        private void einlesenCbHauptspeisen()
+        {
+            cbHauptMontag.Items.Clear();
+            cbHauptDienstag.Items.Clear();
+            cbHauptMittwoch.Items.Clear();
+            cbHauptDonnerstag.Items.Clear();
+            cbHauptFreitag.Items.Clear();
+
+            sql = "SELECT Name FROM Speisen WHERE Speisenart='Hauptspeise'";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                cbHauptMontag.Items.Add(dr[0].ToString());
+                cbHauptDienstag.Items.Add(dr[0].ToString());
+                cbHauptMittwoch.Items.Add(dr[0].ToString());
+                cbHauptDonnerstag.Items.Add(dr[0].ToString());
+                cbHauptFreitag.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+        }
+
+        private void einlesenCbNachspeisen()
+        {
+            cbNachMontag.Items.Clear();
+            cbNachDienstag.Items.Clear();
+            cbNachMittwoch.Items.Clear();
+            cbNachDonnerstag.Items.Clear();
+            cbNachFreitag.Items.Clear();
+
+            sql = "SELECT Name FROM Speisen WHERE Speisenart='Nachspeise'";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                cbNachMontag.Items.Add(dr[0].ToString());
+                cbNachDienstag.Items.Add(dr[0].ToString());
+                cbNachMittwoch.Items.Add(dr[0].ToString());
+                cbNachDonnerstag.Items.Add(dr[0].ToString());
+                cbNachFreitag.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+        }   
 
         private void einlesenSpeisen()
         {
@@ -69,8 +144,7 @@ namespace Speiseplanprojekt___Carina_Manuel
 
             
         }
-
-        
+       
 
         private void speiseAnlegenToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -78,6 +152,7 @@ namespace Speiseplanprojekt___Carina_Manuel
             fSpeise.Text = "Speise anlegen";
             fSpeise.ShowDialog();
             einlesenSpeisen();
+            speisenZiehen();
 
         }
 
@@ -123,6 +198,7 @@ namespace Speiseplanprojekt___Carina_Manuel
 
             fSpeise.ShowDialog();
             einlesenSpeisen();
+            speisenZiehen();
         }
 
         private void speiseBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,6 +212,7 @@ namespace Speiseplanprojekt___Carina_Manuel
             fSpeise.Text = "Speise anlegen";
             fSpeise.ShowDialog();
             einlesenSpeisen();
+            speisenZiehen();
         }
 
         private void speisenBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -160,6 +237,7 @@ namespace Speiseplanprojekt___Carina_Manuel
                 db.Ausfuehren("DELETE FROM Speisen where SID=" + id + ";");
             }
             einlesenSpeisen();
+            speisenZiehen();
         }
 
         private void speisenLöschenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,6 +257,7 @@ namespace Speiseplanprojekt___Carina_Manuel
                 db.Ausfuehren("DELETE FROM Speisen where SID=" + id + ";");
             }
             einlesenSpeisen();
+            speisenZiehen();
         }
 
         private void hintergrundfarbeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,11 +279,19 @@ namespace Speiseplanprojekt___Carina_Manuel
 
         private void bildeinlesen()
         {
-            sr=new StreamReader("pfadbild.txt");
-            string pfad = sr.ReadLine();
-            picture.Image = new Bitmap(pfad);
+            try
+            {
+                sr = new StreamReader("pfadbild.txt");
+                string pfad = sr.ReadLine();
+                picture.Image = new Bitmap(pfad);
 
-            sr.Close();
+                sr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bild wurde nicht gefunden!");
+            }
         }
 
         private void hintergrundfarbeSchreiben()
@@ -242,6 +329,86 @@ namespace Speiseplanprojekt___Carina_Manuel
             sw.WriteLine(dlg.FileName);
             sw.Close();
 
+        }
+
+        private void vorspeisenZiehen()
+        {
+            ids = new int[5];
+            int vorMax = cbVorMontag.Items.Count;
+
+            bool doppelt;
+            int inde;
+            rand = new Random();
+
+            for (int i=0; i<5;i++)
+            {
+                do
+                {
+                    doppelt = true;
+                    ids[i] = rand.Next(0, vorMax);
+                }
+                while (doppelt == false);
+            }
+            cbVorMontag.SelectedIndex = ids[0];
+            cbVorDienstag.SelectedIndex = ids[1];
+            cbVorMittwoch.SelectedIndex = ids[2];
+            cbVorDonnerstag.SelectedIndex = ids[3];
+            cbVorFreitag.SelectedIndex = ids[4];
+        }
+
+        private void hauptspeisenZiehen()
+        {
+            ids = new int[5];
+            int hauptMax = cbHauptMontag.Items.Count;
+
+            bool doppelt;
+            int inde;
+            rand = new Random();
+
+            for (int i = 0; i < 5; i++)
+            {
+                do
+                {
+                    doppelt = true;
+                    ids[i] = rand.Next(0, hauptMax);
+                }
+                while (doppelt == false);
+            }
+            cbHauptMontag.SelectedIndex = ids[0];
+            cbHauptDienstag.SelectedIndex = ids[1];
+            cbHauptMittwoch.SelectedIndex = ids[2];
+            cbHauptDonnerstag.SelectedIndex = ids[3];
+            cbHauptFreitag.SelectedIndex = ids[4];
+        }
+
+        private void nachspeisenZiehen()
+        {
+            ids = new int[5];
+            int nachMax = cbNachMontag.Items.Count;
+
+            bool doppelt;
+            int inde;
+            rand = new Random();
+
+            for (int i = 0; i < 5; i++)
+            {
+                do
+                {
+                    doppelt = true;
+                    ids[i] = rand.Next(0, nachMax);
+                }
+                while (doppelt == false);
+            }
+            cbNachMontag.SelectedIndex = ids[0];
+            cbNachDienstag.SelectedIndex = ids[1];
+            cbNachMittwoch.SelectedIndex = ids[2];
+            cbNachDonnerstag.SelectedIndex = ids[3];
+            cbNachFreitag.SelectedIndex = ids[4];
+        }
+
+        private void btDienstag_Click(object sender, EventArgs e)
+        {
+            speisenZiehen();
         }
     }
 }
