@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
+using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
+using System.Threading;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
@@ -410,5 +414,61 @@ namespace Speiseplanprojekt___Carina_Manuel
         {
             speisenZiehen();
         }
+
+        private void btdrucken_Click(object sender, EventArgs e)
+        {
+            excelöffnen();
+        }
+
+        private void excelöffnen()
+        {
+            sw = new StreamWriter("Speise.csv", false, Encoding.Default);
+
+            sw.WriteLine("Speiseplan " + tabPage1.Text, new System.Drawing.Font("Times New Roman", 14, FontStyle.Bold));                             
+            sw.WriteLine("Vorspeise: " + cbVorMontag.Text);                                          
+            sw.WriteLine("Hauptspeise: " + cbHauptMontag.Text);
+            sw.WriteLine("Nachspeise: " + cbNachMontag.Text);
+            sw.WriteLine("");
+
+
+            sw.WriteLine("Speiseplan " + tabPage2.Text);                              
+            sw.WriteLine("Vorspeise: " + cbVorDienstag.Text);                                          
+            sw.WriteLine("Hauptspeise: " + cbHauptDienstag.Text);
+            sw.WriteLine("Nachspeise: " + cbNachDienstag.Text);
+            sw.WriteLine("");
+
+            sw.WriteLine("Speiseplan " + tabPage3.Text);                             
+            sw.WriteLine("Vorspeise: " + cbVorMittwoch.Text);                                          
+            sw.WriteLine("Hauptspeise: " + cbHauptMittwoch.Text);
+            sw.WriteLine("Nachspeise: " + cbNachMittwoch.Text);
+            sw.WriteLine("");
+
+            sw.WriteLine("Speiseplan " + tabPage4.Text);                              
+            sw.WriteLine("Vorspeise: " + cbVorDonnerstag.Text);                                          
+            sw.WriteLine("Hauptspeise: " + cbHauptDonnerstag.Text);
+            sw.WriteLine("Nachspeise: " + cbNachDonnerstag.Text);
+            sw.WriteLine("");
+
+            sw.WriteLine("Speiseplan " + tabPage5.Text);                             
+            sw.WriteLine("Vorspeise: " + cbVorFreitag.Text);                                          
+            sw.WriteLine("Hauptspeise: " + cbHauptFreitag.Text);
+            sw.WriteLine("Nachspeise: " + cbNachFreitag.Text);
+
+            sw.WriteLine("");
+           
+            sw.Close();
+            //object missing = Missing.Value;
+            //Excel.Application excel = new Excel.Application();
+            //string datei = @"C:\Users\Carina\Documents\Schule\4CK\SWPP\GitHub\Projekt\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\bin\Debug"; //@: nur ein \ notwendig, sonst 2!
+            //excel.Workbooks.Open(datei + "\\Speisenplan.csv");
+            //Worksheet ws = excel.ActiveWorkbook.Worksheets[1];
+            //ws.get_Range("A1:A1", missing).Interior.Color = Color.Red;
+            //ws.get_Range("A1:A1", missing).Font.Bold = true;
+            //((Excel.Range)ws.Columns[1, missing]).AutoFit();
+
+            //excel.Visible = true;
+        }
+
+       
     }
 }
