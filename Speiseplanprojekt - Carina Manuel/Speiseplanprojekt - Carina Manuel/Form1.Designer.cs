@@ -99,6 +99,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -757,6 +758,10 @@
             this.panel1.Size = new System.Drawing.Size(1354, 129);
             this.panel1.TabIndex = 7;
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -867,6 +872,7 @@
         internal System.Windows.Forms.ComboBox cbHauptMittwoch;
         internal System.Windows.Forms.ComboBox cbVorMittwoch;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 
