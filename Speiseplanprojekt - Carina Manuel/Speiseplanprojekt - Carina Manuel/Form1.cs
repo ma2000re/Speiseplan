@@ -11,14 +11,15 @@ using System.Data.OleDb;
 using System.IO;
 using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
+using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.Threading;
 
 namespace Speiseplanprojekt___Carina_Manuel
 {
-    public partial class Speiseplan : Form
+    public partial class Form1 : Form
     {
-        public Speiseplan()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -32,7 +33,6 @@ namespace Speiseplanprojekt___Carina_Manuel
         StreamWriter sw;
         Random rand;
         int[] ids;
-
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -469,6 +469,112 @@ namespace Speiseplanprojekt___Carina_Manuel
             //excel.Visible = true;
         }
 
-       
+        internal void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
+        {
+            object matchCase = true;
+            object matchWHoleWord = true;
+            object matchWildCards = false;
+            object matchSoundLike = false;
+            object nmatchAllForms = false;
+            object forward = true;
+            object format = false;
+            object matchKashida = false;
+            object matchDiactitics = false;
+            object matchAlefHamza = false;
+            object matchControl = false;
+            object read_only = false;
+            object replace = 2;
+            object wrap = 1;
+
+            wordApp.Selection.Find.Execute(ref ToFindText,
+                ref matchCase, ref matchWHoleWord,
+                ref matchWildCards, ref matchSoundLike,
+                ref nmatchAllForms, ref forward,
+                ref wrap, ref format, ref replaceWithText,
+                ref replace, ref matchKashida,
+                ref matchDiactitics, ref matchAlefHamza,
+                ref matchControl);
+        }
+
+
+        internal void CreateWordDocument(object filename, object saveAs)
+        {
+            Word.Application wordApp = new Word.Application();
+
+
+            object missing = Missing.Value;
+            Word.Document myWordDoc = null;
+
+            if (File.Exists((string)filename))
+            {
+
+                object readOnly = false;
+                object isVisible = false;
+                wordApp.Visible = false;
+
+
+                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing, ref missing);
+
+
+                myWordDoc.Activate();
+                wordApp.Visible = false;
+
+                //suche
+                this.FindAndReplace(wordApp, "<vorMontag>", cbVorMontag.Text);
+                this.FindAndReplace(wordApp, "<hauptMontag>", cbHauptMontag.Text);
+                this.FindAndReplace(wordApp, "<nachMontag>", cbNachMontag.Text);
+
+                this.FindAndReplace(wordApp, "<vorDienstag>", cbVorDienstag.Text);
+                this.FindAndReplace(wordApp, "<hauptDienstag>", cbHauptDienstag.Text);
+                this.FindAndReplace(wordApp, "<nachDienstag>", cbNachDienstag.Text);
+
+                this.FindAndReplace(wordApp, "<vorMittwoch>", cbVorMittwoch.Text);
+                this.FindAndReplace(wordApp, "<hauptMittwoch>", cbHauptMittwoch.Text);
+                this.FindAndReplace(wordApp, "<nachMittwoch>", cbNachMittwoch.Text);
+
+                this.FindAndReplace(wordApp, "<vorDonnerstag>", cbVorDonnerstag.Text);
+                this.FindAndReplace(wordApp, "<hauptDonnerstag>", cbHauptDonnerstag.Text);
+                this.FindAndReplace(wordApp, "<nachDonnerstag>", cbNachDonnerstag.Text);
+
+                this.FindAndReplace(wordApp, "<vorFreitag>", cbVorFreitag.Text);
+                this.FindAndReplace(wordApp, "<hauptFreitag>", cbHauptFreitag.Text);
+                this.FindAndReplace(wordApp, "<nachFreitag>", cbNachFreitag.Text);
+
+                this.FindAndReplace(wordApp, "<datum>", DateTime.Now.ToShortDateString());
+            }
+            else
+            {
+                MessageBox.Show("Dokument konnte nicht gefunden werden");
+            }
+
+
+
+            ////Speichern
+            myWordDoc.SaveAs2(ref saveAs, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing);
+
+            myWordDoc.Close();
+            wordApp.Quit();
+
+            MessageBox.Show("Ihr Speiseplan wurde angelegt!");
+        }
+
+        private void btWord_Click(object sender, EventArgs e)
+        {
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string vorlage = path + @"\PlanVorlage.docx";
+            string speicherort = path + @"\Speiseplan.docx";
+
+
+
+            CreateWordDocument(vorlage, speicherort);
+            //CreateWordDocument(@"\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\PlanVorlage.docx", @"\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\Speiseplan.docx");
+        }
     }
 }
