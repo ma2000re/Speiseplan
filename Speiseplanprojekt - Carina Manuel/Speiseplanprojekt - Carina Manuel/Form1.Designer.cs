@@ -333,7 +333,7 @@
             this.btDienstag.Name = "btDienstag";
             this.btDienstag.Size = new System.Drawing.Size(371, 51);
             this.btDienstag.TabIndex = 19;
-            this.btDienstag.Text = "Neu wählen...";
+            this.btDienstag.Text = "Neuen Plan erstellen...";
             this.btDienstag.UseVisualStyleBackColor = true;
             this.btDienstag.Click += new System.EventHandler(this.btDienstag_Click);
             // 
