@@ -16,7 +16,7 @@ namespace Speiseplanprojekt___Carina_Manuel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLaden());
+            Application.Run(new Form1());
         }
     }
 }
