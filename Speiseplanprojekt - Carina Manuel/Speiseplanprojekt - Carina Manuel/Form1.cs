@@ -562,14 +562,15 @@ namespace Speiseplanprojekt___Carina_Manuel
                 ref missing, ref missing, ref missing,
                 ref missing, ref missing, ref missing);
 
-            myWordDoc.PrintOut();
+            // myWordDoc.PrintOut();
             
             myWordDoc.Close();
             wordApp.Quit();
 
             MessageBox.Show("Ihr Speiseplan wurde angelegt!");
 
-            
+            System.Diagnostics.Process.Start(myWordDoc.ToString());
+
 
         }
 
@@ -582,9 +583,8 @@ namespace Speiseplanprojekt___Carina_Manuel
            
             CreateWordDocument(vorlage, speicherort);
             //CreateWordDocument(@"\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\PlanVorlage.docx", @"\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\Speiseplan.docx");
+
             
-
-
 
 
         }
