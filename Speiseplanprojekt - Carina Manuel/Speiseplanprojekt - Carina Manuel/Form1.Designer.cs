@@ -49,7 +49,6 @@
             this.speiseLöschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datenbankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neuLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hintergrundfarbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -259,36 +258,29 @@
             // datenbankToolStripMenuItem
             // 
             this.datenbankToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.öffnenToolStripMenuItem,
             this.neuLadenToolStripMenuItem});
             this.datenbankToolStripMenuItem.Name = "datenbankToolStripMenuItem";
-            this.datenbankToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.datenbankToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datenbankToolStripMenuItem.Text = "Datenbank";
-            // 
-            // öffnenToolStripMenuItem
-            // 
-            this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.öffnenToolStripMenuItem.Text = "Öffnen";
-            this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // neuLadenToolStripMenuItem
             // 
             this.neuLadenToolStripMenuItem.Name = "neuLadenToolStripMenuItem";
-            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.neuLadenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.neuLadenToolStripMenuItem.Text = "Neu laden";
+            this.neuLadenToolStripMenuItem.Click += new System.EventHandler(this.neuLadenToolStripMenuItem_Click);
             // 
             // hintergrundfarbeToolStripMenuItem
             // 
             this.hintergrundfarbeToolStripMenuItem.Name = "hintergrundfarbeToolStripMenuItem";
-            this.hintergrundfarbeToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.hintergrundfarbeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hintergrundfarbeToolStripMenuItem.Text = "Hintergrundfarbe";
             this.hintergrundfarbeToolStripMenuItem.Click += new System.EventHandler(this.hintergrundfarbeToolStripMenuItem_Click);
             // 
             // logoToolStripMenuItem
             // 
             this.logoToolStripMenuItem.Name = "logoToolStripMenuItem";
-            this.logoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.logoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoToolStripMenuItem.Text = "Logo";
             this.logoToolStripMenuItem.Click += new System.EventHandler(this.logoToolStripMenuItem_Click);
             // 
@@ -823,7 +815,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datenbankToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem öffnenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem neuLadenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hintergrundfarbeToolStripMenuItem;
         private System.Windows.Forms.ColorDialog backColor;

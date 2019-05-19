@@ -314,9 +314,6 @@ namespace Speiseplanprojekt___Carina_Manuel
             sw.Close();
         }
 
-        private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
 
         private void logoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -460,16 +457,6 @@ namespace Speiseplanprojekt___Carina_Manuel
             sw.WriteLine("");
            
             sw.Close();
-            //object missing = Missing.Value;
-            //Excel.Application excel = new Excel.Application();
-            //string datei = @"C:\Users\Carina\Documents\Schule\4CK\SWPP\GitHub\Projekt\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\bin\Debug"; //@: nur ein \ notwendig, sonst 2!
-            //excel.Workbooks.Open(datei + "\\Speisenplan.csv");
-            //Worksheet ws = excel.ActiveWorkbook.Worksheets[1];
-            //ws.get_Range("A1:A1", missing).Interior.Color = Color.Red;
-            //ws.get_Range("A1:A1", missing).Font.Bold = true;
-            //((Excel.Range)ws.Columns[1, missing]).AutoFit();
-
-            //excel.Visible = true;
         }
 
         internal void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
@@ -503,7 +490,6 @@ namespace Speiseplanprojekt___Carina_Manuel
         internal void CreateWordDocument(object filename, object saveAs)
         {
             Word.Application wordApp = new Word.Application();
-
 
             object missing = Missing.Value;
             Word.Document myWordDoc = null;
@@ -554,23 +540,22 @@ namespace Speiseplanprojekt___Carina_Manuel
                 MessageBox.Show("Dokument konnte nicht gefunden werden");
             }
 
-
-
             ////Speichern
             myWordDoc.SaveAs2(ref saveAs, ref missing, ref missing, ref missing,
                 ref missing, ref missing, ref missing,
                 ref missing, ref missing, ref missing,
                 ref missing, ref missing, ref missing);
 
-            // myWordDoc.PrintOut();
-            
-            myWordDoc.Close();
-            wordApp.Quit();
-
-            MessageBox.Show("Ihr Speiseplan wurde angelegt!");
-
-            System.Diagnostics.Process.Start(myWordDoc.ToString());
-
+            DialogResult dialogResult = MessageBox.Show("Der Speiseplan wurde angelegt,\nsoll dieser direkt geöffnet werden?", "", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                wordApp.Visible = true;
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                myWordDoc.Close();
+                wordApp.Quit();
+            }
 
         }
 
@@ -579,15 +564,13 @@ namespace Speiseplanprojekt___Carina_Manuel
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             string vorlage = path + @"\PlanVorlage.docx";
             string speicherort = path + @"\Speiseplan.docx";
-
            
             CreateWordDocument(vorlage, speicherort);
-            //CreateWordDocument(@"\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\PlanVorlage.docx", @"\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\Speiseplan.docx");
-
-            
-
-
         }
 
+        private void neuLadenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            einlesenSpeisen();
+        }
     }
 }

@@ -23,3 +23,4 @@ D:\SCHULE\AP_SWE\GitHub\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanp
 C:\Users\Carina\Documents\Schule\4CK\SWPP\GitHub\Projekt\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt - Carina Manuel.csproj.ResolveComReference.cache
 C:\Users\Carina\Documents\Schule\4CK\SWPP\GitHub\Projekt\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt___Carina_Manuel.Form1.resources
 C:\Users\Carina\Documents\Schule\4CK\SWPP\GitHub\Projekt\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt___Carina_Manuel.FormLaden.resources
+D:\SCHULE\AP_SWE\GitHub\Speiseplan\Speiseplanprojekt - Carina Manuel\Speiseplanprojekt - Carina Manuel\obj\Debug\Speiseplanprojekt___Carina_Manuel.FormLaden.resources
