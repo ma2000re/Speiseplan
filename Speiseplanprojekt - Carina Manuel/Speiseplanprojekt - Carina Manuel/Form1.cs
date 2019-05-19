@@ -19,8 +19,11 @@ namespace Speiseplanprojekt___Carina_Manuel
 {
     public partial class Form1 : Form
     {
+        internal static Form1 f1;
         public Form1()
         {
+
+            f1 = this;
             InitializeComponent();
         }
 
@@ -294,7 +297,7 @@ namespace Speiseplanprojekt___Carina_Manuel
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bild wurde nicht gefunden!");
+                //MessageBox.Show("Bild wurde nicht gefunden!");
             }
         }
 
